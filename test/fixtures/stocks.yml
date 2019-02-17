@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 1
+  time: 1
+  availables: 1
+  car_id: 1
+
+two:
+  date: 1
+  time: 1
+  availables: 1
+  car_id: 1

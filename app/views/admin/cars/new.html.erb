@@ -1,0 +1,7 @@
+<h1>試乗車の登録</h1>
+
+<nav class = "justify-content-end">
+  <%= link_to "一覧", admin_cars_path, class: "nav-link" %>
+</nav>
+
+<%= render partial: "form", locals: {car: @car} %>

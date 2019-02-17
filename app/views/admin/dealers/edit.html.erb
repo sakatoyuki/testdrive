@@ -1,0 +1,7 @@
+<h1>ディーラーの店舗編集</h1>
+
+<nav class = "justify-content-end">
+  <%= link_to "一覧", admin_dealers_path, class: "nav-link" %>
+</nav>
+
+<%= render partial: "form", locals: {dealer: @dealer} %>

@@ -1,0 +1,27 @@
+<h1>登録駅一覧</h1>
+
+<%= link_to "新規登録", new_admin_station_path, class: "btn btn-primary" %>
+
+<table class = "table table-hover">
+  <thead class = thead-default>
+    <tr>
+      <th><%= Station.human_attribute_name(:name) %></th>
+      <th><%= Station.human_attribute_name(:waiting_spot) %></th>
+      <th><%= Station.human_attribute_name(:map_image) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= station.name %></td>
+        <td><%= station.waiting_spot %></td>
+        <td><%= image_tag station.map_image.url %></td>
+        <td>
+          <%= link_to "編集", edit_admin_station_path(id: station.id), class: "btn btn-primary mr-3" %>
+          <%= link_to "削除", admin_station_path(id: station.id), method: :delete, data: {confirm: "「#{station.name}」駅を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

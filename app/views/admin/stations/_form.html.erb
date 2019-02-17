@@ -1,0 +1,16 @@
+<%= form_with model: [:admin, station], local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :waiting_spot %>
+    <%= f.text_field :waiting_spot, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :map_image %>
+    <%= f.file_field :map_image %>
+  </div>
+
+  <%= f.submit "登録する", class: "btn btn-primary" %>
+<% end %>

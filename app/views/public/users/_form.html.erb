@@ -1,0 +1,44 @@
+<%= form_with model: [:public, user], local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tel %>
+    <%= f.text_field :tel, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :postalcode %>
+    <%= f.text_field :postalcode, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :current_maker %>
+    <%= f.text_field :current_maker, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :current_car %>
+    <%= f.text_field :current_car, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.text_field :status, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :candidate %>
+    <%= f.text_field :candidate, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
+  <%= f.submit "登録する", class: "btn btn-primary" %>
+<% end %>

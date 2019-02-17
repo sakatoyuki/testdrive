@@ -1,0 +1,23 @@
+<h1>登録ユーザー一覧</h1>
+
+<%= link_to "新規登録", new_public_user_path, class: "btn btn-primary" %>
+
+<table class = "table table-hover">
+  <thead class = thead-default>
+    <tr>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td>
+          <%= link_to "編集", edit_public_user_path(id: user.id), class: "btn btn-primary mr-3" %>
+          <%= link_to "削除", public_user_path(id: user.id), method: :delete, data: {confirm: "ディーラー「#{user.name}」を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<h1>登録ディーラー一覧</h1>
+
+<%= link_to "新規登録", new_admin_dealer_path, class: "btn btn-primary" %>
+
+<table class = "table table-hover">
+  <thead class = thead-default>
+    <tr>
+      <th><%= Dealer.human_attribute_name(:name) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dealers.each do |dealer| %>
+      <tr>
+        <td><%= dealer.name %></td>
+        <td>
+          <%= link_to "編集", edit_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
+          <%= link_to "削除", admin_dealer_path(id: dealer.id), method: :delete, data: {confirm: "ディーラー「#{dealer.name}」を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
