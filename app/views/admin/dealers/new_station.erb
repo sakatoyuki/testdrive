@@ -1,0 +1,10 @@
+<div class="admin-wrapper">
+  <div class="container admin-container">
+
+    <h1>駅情報の登録</h1>
+
+    <%= link_to "駅一覧", admin_stations_path, class: "btn btn-secondary btn-admin" %>
+
+    <%= render partial: "station_form", locals: {station: @station} %>
+  </div>
+</div>

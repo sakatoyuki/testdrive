@@ -1,4 +1,6 @@
 class Public::SessionsController < ApplicationController
+  #skip_before_action :login_user_required
+
   def new
   end
 
@@ -7,8 +9,9 @@ class Public::SessionsController < ApplicationController
 
     if user&.authenticate(session_params[:password])
       session[:user_id] = user.id
-      redirect_to "#", notice: "ログインしました。"
+      redirect_to public_reservations_top_path, notice: "ログインしました。"
     else
+      flash.now[:danger] = "ログインに失敗しました。"
       render :new
     end
   end

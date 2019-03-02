@@ -1,7 +1,11 @@
-<h1>ディーラーの店舗登録</h1>
+<div class="admin-wrapper">
+  <div class="container admin-container">
 
-<nav class = "justify-content-end">
-  <%= link_to "一覧", admin_dealers_path, class: "nav-link" %>
-</nav>
 
-<%= render partial: "form", locals: {dealer: @dealer} %>
+    <h1>ディーラーの店舗登録</h1>
+
+    <%= link_to "店舗一覧", admin_dealers_path, class: "btn btn-secondary btn-admin" %>
+    <%= render partial: "form", locals: {dealer: @dealer} %>
+
+  </div>
+</div>

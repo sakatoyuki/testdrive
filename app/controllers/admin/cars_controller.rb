@@ -1,32 +1,35 @@
 class Admin::CarsController < ApplicationController
-  def new
-    @car = Car.new
-  end
+  layout "admin/stocks"
 
-  def create
-    @car = Car.new(car_params)
+  #def new
+  #  @car = Car.new
+  #end
 
-    if @car.save
-      redirect_to admin_cars_path, notice: "「#{@car.name}」を登録しました"
-    else
-      render :new
-    end
-  end
+  #def create
+  #  dealer = Dealer.find(params[:id])
+  #  @car = dealer.cars.new(car_params)
+  #  if @car.save
+  #    redirect_to admin_cars_path, notice: "「#{@car.name}」を登録しました"
+  #  else
+  #    Rails.logger.debug(@car.errors.messages)
+  #    render :new
+  #  end
+  #end
 
   def edit
-    @car = Car.find(params[:id])
+    @car = current_dealer.cars.find(params[:id])
   end
 
   def show
-    @car = Car.find(params[:id])
+    @car = current_dealer.cars.find(params[:id])
   end
 
   def index
-    @cars = Car.all
+    @cars = current_dealer.cars
   end
 
   def update
-    @car = Car.find(params[:id])
+    @car = current_dealer.cars.find(params[:id])
 
     if @car.update(car_params)
       redirect_to admin_cars_path, notice: "「#{@car.name}」を更新しました"
@@ -36,7 +39,7 @@ class Admin::CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.find(params[:id])
+    @car = current_dealer.cars.find(params[:id])
     @car.destroy
     redirect_to admin_cars_url, notice: "「#{@car.name}」を削除しました"
   end
@@ -45,6 +48,6 @@ class Admin::CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :waiting_spot, :map_image)
+    params.require(:car).permit(:name, :count, :car_image)
   end
 end

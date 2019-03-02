@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :status, presence: true
   validates :candidate, presence: true
 
+  has_many :reservations 
+
 end

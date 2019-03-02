@@ -1,6 +1,61 @@
-<h1>「帰り道」で、試乗</h1>
-<p>最寄駅から自宅まで、簡単予約で試乗できる</p>
+<div class="top-wrapper text-center">
+  <div class="container top-container">
+    <h1>帰り道で、試乗</h1>
+    <h4>最寄駅から自宅まで、簡単予約で試乗できる</h4>
+    <%= image_tag ("top1.jpg") %>
+    <h1>BMWに乗って帰ろう</h1>
+    <h4>話題の新車に、簡単便利に試乗できる</h4>
 
-<%= image_tag ("top1.png") %>
+    <div id="slide-wrapper">
+      <div id="slider">
+        <div class="slide-item"><%= image_tag ("car1.png") %></div>
+        <div class="slide-item"><%= image_tag ("car2_1.png") %></div>
+        <div class="slide-item"><%= image_tag ("car3_1.png") %></div>
+        <div class="slide-item"><%= image_tag ("car4_2.png") %></div>
+        <div class="slide-item"><%= image_tag ("car5_1.png") %></div>
+      </div>
+    </div>
 
-<%= link_to "さっそく予約してみる！", new_public_reservation_path, class: "btn btn-primary" %>
+    <h1>使い方は簡単</h1>
+    <h4>たった3ステップで予約から試乗まで完了</h4>
+    <div class="step-wrapper">
+      <div class="row steps">
+        <div class="col-6 step number">01</div>
+        <div class="col-6 step description">駅を選ぶ</div>
+      </div>
+      <div class="row steps">
+        <div class="col-6 step number">02</div>
+        <div class="col-6 step description">日時を選ぶ</div>
+      </div>
+      <div class="row steps">
+        <div class="col-6 step number">03</div>
+        <div class="col-6 step description">駅前で待ち合わせ→試乗</div>
+      </div>
+    </div>
+
+    <h1>試乗予約できる駅</h1>
+    <h4>最寄駅を選んで、さっそく試乗を予約してみる！</h4>
+    <div class="station-wrapper">
+      <div class="row">
+        <%= link_to "JR尼崎駅", new_public_reservation_path, class: "col-md btn top-stations amagasaki" %>
+        <%= link_to "阪神尼崎駅", new_public_reservation_path, class: "col-md btn top-stations amagasaki" %>
+        <%= link_to "JR神戸駅", new_public_reservation_path, class: "col-md btn top-stations kobe" %>
+      </div>
+      <div class="row">
+        <div class="col-md top-stations nishinomiya">JR西宮駅</div>
+        <div class="col-md top-stations nishinomiya">阪神西宮駅</div>
+        <div class="col-md top-stations nishinomiya">阪急西宮北口駅</div>
+      </div>
+      <div class="row">
+        <div class="col-md top-stations ashiya">JR芦屋駅</div>
+        <div class="col-md top-stations ashiya">阪神芦屋駅</div>
+        <div class="col-md top-stations ashiya">阪急芦屋川駅</div>
+      </div>
+      <div class="row">
+        <div class="col-md top-stations sannomiya">JR三宮駅</div>
+        <div class="col-md top-stations sannomiya">阪神三宮駅</div>
+        <div class="col-md top-stations sannomiya">阪急神戸三宮駅</div>
+      </div>
+    </div>
+  </div>
+</div>

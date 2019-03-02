@@ -7,8 +7,9 @@ class Admin::StocksController < ApplicationController
     @stock = Stock.new(stock_params)
 
     if @stock.save
-      redirect_to admin_stocks_path, notice: "「#{@stock.name}」を登録しました"
+      redirect_to admin_stocks_path, notice: "登録しました"
     else
+      flash.now[:danger] = "登録に失敗しました。"
       render :new
     end
   end
@@ -45,6 +46,6 @@ class Admin::StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:name, :waiting_spot, :map_image)
+    params.require(:stock).permit(:name, :date, :time, :availables)
   end
 end

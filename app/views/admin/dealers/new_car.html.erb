@@ -1,0 +1,9 @@
+<div class="admin-wrapper">
+  <div class="container admin-container">
+
+    <h1>試乗車の登録</h1>
+
+    <%= link_to "試乗車一覧", admin_cars_path, class: "btn btn-secondary btn-admin" %>
+    <%= render partial: "car_form", locals: {car: @car} %>
+  </div>
+</div>

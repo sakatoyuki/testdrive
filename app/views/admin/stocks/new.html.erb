@@ -1,7 +1,13 @@
-<h1>試乗可能時間の登録</h1>
+<div class="admin-wrapper">
+  <div class="container admin-container">
 
-<nav class = "justify-content-end">
-  <%= link_to "一覧", admin_stocks_path, class: "nav-link" %>
-</nav>
+    <h1>試乗可能時間の登録</h1>
 
-<%= render partial: "form", locals: {stock: @stock} %>
+    <nav class = "justify-content-end">
+      <%= link_to "一覧", admin_stocks_path, class: "nav-link" %>
+    </nav>
+
+    <%= render partial: "form", locals: {stock: @stock} %>
+
+  </div>
+</div>

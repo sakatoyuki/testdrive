@@ -1,5 +1,7 @@
 class Admin::SessionsController < ApplicationController
-  #skip_before_action :login_required
+  skip_before_action :login_dealer_required
+
+  layout "admin/stocks"
 
   def new
   end
@@ -9,8 +11,9 @@ class Admin::SessionsController < ApplicationController
 
     if dealer&.authenticate(session_params[:password])
       session[:dealer_id] = dealer.id
-      redirect_to "#", notice: "ログインしました。"
+      redirect_to admin_root_path, notice: "ログインしました。"
     else
+      flash.now[:danger] = "ログインに失敗しました。"
       render :new
     end
   end

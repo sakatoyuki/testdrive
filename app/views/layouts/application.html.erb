@@ -6,26 +6,31 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-light navbar-fixed bg-secondary">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color:#002698">
       <div class="container">
-        <%= link_to "Test Drive", "#", class: "navbar-brand" %>
-        <ul class="nav navbar-nav ml-auto">
-          <% if current_dealer %>
-            <li class="nav-item"><%= link_to "ディーラー一覧", admin_dealers_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "nav-link" %></li>
+        <span style="font-family: cursive" >
+          <%= link_to "Test Drive", public_reservations_top_path, class: "navbar-brand text-white" %>
+        </span>
+        <ul class="nav navbar-nav navbar-right navbar-collapse collapse ml-auto">
+          <% if current_user %>
+            <li class="nav-item"><%= link_to "ログアウト", public_logout_path, method: :delete, class: "nav-link text-white" %></li>
           <% else %>
-            <li class="nav-item"><%= link_to "ログイン", admin_login_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "ユーザー登録", new_public_user_path, class: "nav-link text-white" %></li>
+            <li class="nav-item"><%= link_to "ログイン", public_login_path, class: "nav-link text-white" %></li>
           <% end %>
         </ul>
       </div>
     </nav>
-
-    <div class="container">
       <%= yield %>
-    </div>
   </body>
 </html>

@@ -1,32 +1,34 @@
 class Admin::StationsController < ApplicationController
-  def new
-    @station = Station.new
-  end
+  layout "admin/stocks"
 
-  def create
-    @station = Station.new(station_params)
+  #def new
+  #  @station = Station.new
+  #end
 
-    if @station.save
-      redirect_to admin_stations_path, notice: "「#{@station.name}」駅を登録しました"
-    else
-      render :new
-    end
-  end
+  #def create
+  #  dealer = Dealer.find(params[:id])
+  #  @station = dealer.stations.new(station_params)
+  #    if @station.save
+  #      redirect_to admin_stations_path, notice: "「#{@station.name}」駅を登録しました"
+  #    else
+  #      render :new
+  #    end
+  #end
 
   def edit
-    @station = Station.find(params[:id])
+    @station = current_dealer.station.find(params[:id])
   end
 
   def show
-    @station = Station.find(params[:id])
+    @station = current_dealer.station.find(params[:id])
   end
 
   def index
-    @stations = Station.all
+    @stations = current_dealer.stations
   end
 
   def update
-    @station = Station.find(params[:id])
+    @station = current_dealer.station.find(params[:id])
 
     if @station.update(station_params)
       redirect_to admin_stations_path, notice: "「#{@station.name}」駅を更新しました"
@@ -36,7 +38,7 @@ class Admin::StationsController < ApplicationController
   end
 
   def destroy
-    @station = Station.find(params[:id])
+    @station = current_dealer.station.find(params[:id])
     @station.destroy
     redirect_to admin_stations_url, notice: "「#{@station.name}」駅を削除しました"
   end

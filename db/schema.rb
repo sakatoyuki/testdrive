@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2019_02_17_015917) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.integer "date", null: false
-    t.integer "time", null: false
+    t.date "date", null: false
+    t.time "time", null: false
     t.integer "availables", null: false
-    t.integer "car_id", null: false
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

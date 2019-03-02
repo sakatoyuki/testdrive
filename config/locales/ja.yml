@@ -12,6 +12,8 @@ ja:
       station: 駅
       car: 試乗車
       stock: 試乗可能時間
+      session: セッション
+      user: ユーザー
     attributes:
       dealer:
         id: ID
@@ -36,9 +38,19 @@ ja:
         date: 日付
         time: 時間
         availables: 試乗可能台数
+      session:
+        id: ID
+        login_id: ログインID
+        password: パスワード
       user:
         name: 名前
         email: メールアドレス
+        tel: 電話番号
+        postalcode: 郵便番号
+        current_maker: 現在のメーカー
+        current_car: 現在の車種
+        status: 検討状況
+        candidate: 購入候補の車種
         password: パスワード
         password_confirmation: パスワーク（確認）
         created_at: 登録日時
