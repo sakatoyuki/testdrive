@@ -1,6 +1,8 @@
 class Admin::StocksController < ApplicationController
   def new
     @stock = Stock.new
+    @stocks = Stock.includes(:car).all
+    @cars = current_dealer.cars
   end
 
   def create
@@ -23,7 +25,7 @@ class Admin::StocksController < ApplicationController
   end
 
   def index
-    @stocks = Stock.all
+    @stocks = Stock.includes(:car).all
   end
 
   def update

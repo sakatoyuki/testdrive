@@ -12,8 +12,3 @@ $(function() {
     nextArrow: '<button class="slide-arrow next-arrow"></button>'
   });
 });
-
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-  });
-});

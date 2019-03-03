@@ -16,19 +16,19 @@ class Admin::StationsController < ApplicationController
   #end
 
   def edit
-    @station = current_dealer.station.find(params[:id])
+    @station = Station.find(params[:id])
   end
 
   def show
-    @station = current_dealer.station.find(params[:id])
+    @station = Station.find(params[:id])
   end
 
   def index
-    @stations = current_dealer.stations
+    @stations = Station.all
   end
 
   def update
-    @station = current_dealer.station.find(params[:id])
+    @station = Station.find(params[:id])
 
     if @station.update(station_params)
       redirect_to admin_stations_path, notice: "「#{@station.name}」駅を更新しました"
@@ -38,7 +38,7 @@ class Admin::StationsController < ApplicationController
   end
 
   def destroy
-    @station = current_dealer.station.find(params[:id])
+    @station = Station.find(params[:id])
     @station.destroy
     redirect_to admin_stations_url, notice: "「#{@station.name}」駅を削除しました"
   end

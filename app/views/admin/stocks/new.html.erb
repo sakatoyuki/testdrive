@@ -3,11 +3,53 @@
 
     <h1>試乗可能時間の登録</h1>
 
-    <nav class = "justify-content-end">
-      <%= link_to "一覧", admin_stocks_path, class: "nav-link" %>
-    </nav>
+    <fieldset>
+      <legend class="reserve-title">日付・時間の選択
+      <div class="reserve-card">
+        <div id="calendar"></div>
 
-    <%= render partial: "form", locals: {stock: @stock} %>
+        <div class="availables-card text-center">
+          <div class="row">
+            <button class="col-md time-btn">16:00</button>
+            <button class="col-md time-btn">16:30</button>
+          </div>
+          <div class="row">
+            <button class="col-md time-btn">17:00</button>
+            <button class="col-md time-btn">17:30</button>
+          </div>
+          <div class="row">
+            <button class="col-md time-btn">18:00</button>
+            <button class="col-md time-btn">18:30</button>
+          </div>
+          <div class="row">
+            <button class="col-md time-btn">19:00</button>
+            <button class="col-md time-btn">19:30</button>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="angle-container">
+      <i class="fas fa-angle-down fa-4x"></i>
+    </div>
+
+    <fieldset>
+      <legend class="reservation-title">試乗車の選択
+      <% @cars.each do |car| %>
+        <div class="reserve-car-card">
+          <div class="reserve-car-name text-left">
+            <input type="checkbox" id="car-checkbox" name="car_id">
+            <span class="reserve-car_title">car.name</span>
+            <span class="reserve-car_picture">car.image</span>
+          </div>
+          <div class="available-numbers text-right">
+            台数
+          </div>
+        </div>
+      <% end %>
+    </fieldset>
+
+    <%= link_to "登録完了", admin_root_path, class: "btn btn-admin btn-danger" %>
 
   </div>
 </div>

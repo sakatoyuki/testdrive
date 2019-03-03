@@ -12,7 +12,7 @@
           <th><%= Car.human_attribute_name(:count) %></th>
           <th><%= Car.human_attribute_name(:car_image) %></th>
           <th><%= Car.human_attribute_name(:dealer_id) %></th>
-          <%#<th></th>%>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -22,10 +22,10 @@
             <td><%= car.count %></td>
             <td><%= image_tag car.car_image.url %></td>
             <td><%= car.dealer_id %></td>
-            <%#<td>%>
-              <%#<%= link_to "編集", edit_admin_car_path(id: car.id), class: "btn btn-primary mr-3" %>
-              <%#<%= link_to "削除", admin_car_path(id: car.id), method: :delete, data: {confirm: "「#{car.name}」駅を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
-            <%#</td>%>
+            <td>
+              <%= link_to "編集", edit_admin_car_path(id: car.id), class: "btn btn-primary mr-3" %>
+              <%= link_to "削除", admin_car_path(id: car.id), method: :delete, data: {confirm: "「#{car.name}」駅を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
+            </td>
           </tr>
         <% end %>
       </tbody>

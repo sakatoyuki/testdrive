@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
@@ -23,8 +24,9 @@
         </span>
         <ul class="nav navbar-nav navbar-right navbar-collapse collapse ml-auto">
           <% if current_dealer %>
-            <li class="nav-item"><%= link_to "登録車", admin_cars_path, class: "nav-link" %></li>
-            <li class="nav-item"><%= link_to "待ち合わせ場所", admin_stations_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "ディーラー一覧", admin_dealers_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "登録車一覧", admin_cars_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to "駅一覧", admin_stations_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to "ログアウト", admin_logout_path, method: :delete, class: "nav-link" %></li>
           <% else %>
             <li class="nav-item"><%= link_to "ログイン", admin_login_path, class: "nav-link" %></li>

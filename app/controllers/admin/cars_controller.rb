@@ -17,19 +17,15 @@ class Admin::CarsController < ApplicationController
   #end
 
   def edit
-    @car = current_dealer.cars.find(params[:id])
-  end
-
-  def show
-    @car = current_dealer.cars.find(params[:id])
+    @car = Car.find(params[:id])
   end
 
   def index
-    @cars = current_dealer.cars
+    @cars = Car.all
   end
 
   def update
-    @car = current_dealer.cars.find(params[:id])
+    @car = Car.find(params[:id])
 
     if @car.update(car_params)
       redirect_to admin_cars_path, notice: "「#{@car.name}」を更新しました"
@@ -39,7 +35,7 @@ class Admin::CarsController < ApplicationController
   end
 
   def destroy
-    @car = current_dealer.cars.find(params[:id])
+    @car = Car.find(params[:id])
     @car.destroy
     redirect_to admin_cars_url, notice: "「#{@car.name}」を削除しました"
   end

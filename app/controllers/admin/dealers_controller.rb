@@ -73,6 +73,7 @@ class Admin::DealersController < ApplicationController
     end
   end
 
+
   private
 
   def dealer_params
@@ -82,7 +83,7 @@ class Admin::DealersController < ApplicationController
   def station_params
     params.require(:station).permit(:name, :waiting_spot, :map_image)
   end
-  
+
   def car_params
     params.require(:car).permit(:name, :count, :car_image)
   end

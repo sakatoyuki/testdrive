@@ -12,7 +12,7 @@
           <th><%= Station.human_attribute_name(:waiting_spot) %></th>
           <th><%= Station.human_attribute_name(:map_image) %></th>
           <th><%= Station.human_attribute_name(:dealer_id) %></th>
-          <%#<th></th>%>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -22,10 +22,10 @@
             <td><%= station.waiting_spot %></td>
             <td><%= image_tag station.map_image.url %></td>
             <td><%= station.dealer_id %></td>
-            <%#<td>%>
-              <%#<%= link_to "編集", edit_admin_station_path(id: station.id), class: "btn btn-primary mr-3" %>
-              <%#<%= link_to "削除", admin_station_path(id: station.id), method: :delete, data: {confirm: "「#{station.name}」駅を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
-            <%#</td>%>
+            <td>
+              <%= link_to "編集", edit_admin_station_path(id: station.id), class: "btn btn-primary mr-3" %>
+              <%= link_to "削除", admin_station_path(id: station.id), method: :delete, data: {confirm: "「#{station.name}」駅を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
+            </td>
           </tr>
         <% end %>
       </tbody>

@@ -1,10 +1,12 @@
+/*
+*= require fullcalendar
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "custom";
 
 /*
-*= require bxslider
 *= require_self
-*= require fullcalendar
 *= require_tree .
 */

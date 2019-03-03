@@ -10,9 +10,9 @@
         <tr>
           <th><%= Dealer.human_attribute_name(:id) %></th>
           <th><%= Dealer.human_attribute_name(:name) %></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th>ディーラー情報</th>
+          <th>駅の情報</th>
+          <th>試乗車の情報</th>
         </tr>
       </thead>
       <tbody>
@@ -20,14 +20,15 @@
           <tr>
             <td><%= dealer.id %></td>
             <td><%= dealer.name %></td>
-            <td></td>
             <td>
               <%= link_to "編集", edit_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
               <%= link_to "削除", admin_dealer_path(id: dealer.id), method: :delete, data: {confirm: "ディーラー「#{dealer.name}」を削除します。よろしいですか？"}, class: "btn btn-danger mr-3" %>
             </td>
             <td>
-              <%= link_to "駅の登録", new_station_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
-              <%= link_to "試乗車の登録", new_car_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
+              <%= link_to "登録", new_station_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
+            </td>
+            <td>
+              <%= link_to "登録", new_car_admin_dealer_path(id: dealer.id), class: "btn btn-primary mr-3" %>
             </td>
           </tr>
         <% end %>
