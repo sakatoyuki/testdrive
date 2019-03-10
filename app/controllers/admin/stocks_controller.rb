@@ -7,6 +7,8 @@ class Admin::StocksController < ApplicationController
 
   def create
     @stock = Stock.new(stock_params)
+    @stocks = Stock.includes(:car).all
+    @cars = current_dealer.cars
 
     if @stock.save
       redirect_to admin_stocks_path, notice: "登録しました"

@@ -22,8 +22,3 @@
 //= require fullcalendar/lang/ja
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function(){
-  $('#calendar').fullCalendar({
-  });
-});
