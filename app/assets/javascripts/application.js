@@ -11,12 +11,12 @@
 // about supported directives.
 //
 
+//= require bootstrap-sprockets
+//= require bootstrap
 //= require rails-ujs
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
-//= require bootstrap-sprockets
-//= require bootstrap
 //= require moment
 //= require fullcalendar
 //= require fullcalendar/lang/ja

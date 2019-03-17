@@ -40,6 +40,7 @@ gem "carrierwave"
 gem 'jquery-rails'
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
+gem 'nested_form_fields'
 
 
 group :development, :test do

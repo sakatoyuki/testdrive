@@ -37,7 +37,7 @@ ja:
         id: ID
         date: 日付
         time: 時間
-        availables: 試乗可能台数
+        availables: 台数
       session:
         id: ID
         login_id: ログインID

@@ -19,17 +19,17 @@
     <h1>使い方は簡単</h1>
     <h4>たった3ステップで予約から試乗まで完了</h4>
     <div class="step-wrapper">
-      <div class="row steps">
-        <div class="col-6 step number">01</div>
-        <div class="col-6 step description">駅を選ぶ</div>
+      <div class="steps">
+        <div class="step number">01</div>
+        <div class="step description">駅を選ぶ</div>
       </div>
-      <div class="row steps">
-        <div class="col-6 step number">02</div>
-        <div class="col-6 step description">日時を選ぶ</div>
+      <div class="steps">
+        <div class="step number">02</div>
+        <div class="step description">日時を選ぶ</div>
       </div>
-      <div class="row steps">
-        <div class="col-6 step number">03</div>
-        <div class="col-6 step description">駅前で待ち合わせ→試乗</div>
+      <div class="steps">
+        <div class="step number">03</div>
+        <div class="step description">駅前で待ち合わせ→試乗</div>
       </div>
     </div>
 
@@ -37,9 +37,9 @@
     <h4>最寄駅を選んで、さっそく試乗を予約してみる！</h4>
     <div class="station-wrapper">
       <div class="row">
-        <%= link_to "JR尼崎駅", new_public_reservation_path, class: "col-md btn top-stations amagasaki" %>
-        <%= link_to "阪神尼崎駅", new_public_reservation_path, class: "col-md btn top-stations amagasaki" %>
-        <%= link_to "JR神戸駅", new_public_reservation_path, class: "col-md btn top-stations kobe" %>
+        <%= link_to "JR尼崎駅", new_public_reservation_path, class: "col-md top-stations amagasaki" %>
+        <%= link_to "阪神尼崎駅", new_public_reservation_path, class: "col-md top-stations amagasaki" %>
+        <%= link_to "JR神戸駅", new_public_reservation_path, class: "col-md top-stations kobe" %>
       </div>
       <div class="row">
         <div class="col-md top-stations nishinomiya">JR西宮駅</div>

@@ -1,35 +1,35 @@
 <div class="top-wrapper">
   <div class="container new-container">
     <h1 class="text-center">車種・日時を選択してください：</h1>
-    <h4>シリーズ1</h4>
-    <div class="text-center">
-      <%= image_tag ("car1.png") %>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-bordered text-nowrap text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th>4/1</th>
-            <th>4/2</th>
-            <th>4/3</th>
-            <th>4/4</th>
-            <th>4/5</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <h4>シリーズ1</h4>
+      <div class="available-car-image">
+        <%= image_tag ("car1.png") %>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered text-nowrap text-center">
+          <thead class="thead-dark">
+            <tr>
+              <th>4/1</th>
+              <th>4/2</th>
+              <th>4/3</th>
+              <th>4/4</th>
+              <th>4/5</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a data-target="modal" class="modal-open">○</a></td>
+              <td><a data-target="modal" class="modal-open">○</a></td>
+              <td><a data-target="modal" class="modal-open">○</a></td>
+              <td><a data-target="modal" class="modal-open">○</a></td>
+              <td><a data-target="modal" class="modal-open">○</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
     <h4>シリーズ2</h4>
-    <div class="text-center">
+    <div class="available-car-image">
       <%= image_tag ("car2_1.png") %>
     </div>
     <div class="table-responsive">
@@ -45,39 +45,92 @@
         </thead>
         <tbody>
           <tr>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
-            <td>○</td>
+            <td><a data-target="modal" class="modal-open">○</a></td>
+            <td><a data-target="modal" class="modal-open">○</a></td>
+            <td><a data-target="modal" class="modal-open">○</a></td>
+            <td><a data-target="modal" class="modal-open">○</a></td>
+            <td><a data-target="modal" class="modal-open">○</a></td>
           </tr>
         </tbody>
       </table>
     </div>
+
+  <h4>シリーズ3</h4>
+  <div class="available-car-image">
+    <%= image_tag ("car3_1.png") %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered text-nowrap text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>4/1</th>
+          <th>4/2</th>
+          <th>4/3</th>
+          <th>4/4</th>
+          <th>4/5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="container text-center">
-    <h1>時間を選択してください：</h1>
-    <div class="time-container">
-      <div class="row">
-        <button class="col-md time-btn">16:00</button>
-        <button class="col-md time-btn">16:30</button>
-      </div>
-      <div class="row">
-        <button class="col-md time-btn">17:00</button>
-        <button class="col-md time-btn">17:30</button>
-      </div>
-      <div class="row">
-        <button class="col-md time-btn">18:00</button>
-        <button class="col-md time-btn">18:30</button>
-      </div>
-      <div class="row">
-        <button class="col-md time-btn">19:00</button>
-        <button class="col-md time-btn">19:30</button>
-      </div>
+  <h4>シリーズ4</h4>
+  <div class="available-car-image">
+    <%= image_tag ("car4_2.png") %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered text-nowrap text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th>4/1</th>
+          <th>4/2</th>
+          <th>4/3</th>
+          <th>4/4</th>
+          <th>4/5</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+          <td><a data-target="modal" class="modal-open">○</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div id="modal" class="time-container modal-content">
+    <h1>予約可能時間：</h1>
+    <div class="row">
+      <button class="col-md time-btn">16:00</button>
+      <button class="col-md time-btn">16:30</button>
+    </div>
+    <div class="row">
+      <button class="col-md time-btn">17:00</button>
+      <button class="col-md time-btn">17:30</button>
+    </div>
+    <div class="row">
+      <button class="col-md time-btn">18:00</button>
+      <button class="col-md time-btn">18:30</button>
+    </div>
+    <div class="row">
+      <button class="col-md time-btn">19:00</button>
+      <button class="col-md time-btn">19:30</button>
     </div>
 
-    <%= link_to "予約完了！", public_reservations_confirm_path, class: "btn btn-complete btn-primary" %>
+    <%= link_to "予約完了！", public_reservations_confirm_path, class: "btn btn-complete btn-danger" %>
+
   </div>
 
 </div>

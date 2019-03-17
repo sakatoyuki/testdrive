@@ -4,6 +4,7 @@ class Car < ApplicationRecord
   validates :car_image, presence: true
 
   has_many :stocks
+  accepts_nested_attributes_for :stocks
   belongs_to :dealer
   mount_uploader :car_image, ImageUploader
 end

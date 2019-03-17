@@ -24,7 +24,7 @@ h1, h4 {
   }
   img{
     margin: auto;
-    width: 100%;
+    width: 70%;
     height: auto;
     margin-bottom: 80px;
   }
@@ -32,7 +32,9 @@ h1, h4 {
 
 #slide-wrapper{
   background-color: #ddd;
-  padding: 50px 0 25px 0;
+  margin: auto;
+  width: 70%;
+  padding: 50px 0 40px 0;
   margin-bottom: 80px;
 }
 
@@ -55,13 +57,14 @@ button{
   -moz-appearance: none;
   appearance: none;
 }
+
 .slide-arrow{
   position: absolute;
   top: 50%;
   margin-top: -15px;
 }
 .prev-arrow{
-  left: -40px;
+  left: -60px;
   width: 0;
   height: 0;
   border-left: 0 solid transparent;
@@ -70,7 +73,7 @@ button{
   border-bottom: 10px solid transparent;
 }
 .next-arrow{
-  right: -40px;
+  right: -60px;
   width: 0;
   height: 0;
   border-right: 0 solid transparent;
@@ -136,15 +139,17 @@ button{
 .step-wrapper{
   padding-top: 20px;
   margin-bottom: 80px;
+  margin: 0 auto 80px auto;
+  width: 70%;
 }
 
 .steps {
   background-color: #ddd;
   margin-bottom: 30px;
-  padding: 20px;
+  padding: 20px 0;
 }
 .step {
-  font-size: 32px;
+  font-size: 28px;
   display: inline-block;
   padding: 14px;
   font-weight: 500;
@@ -170,11 +175,49 @@ button{
     margin: auto;
     width: 100%;
     height: auto;
-    margin-bottom: 80px;
   }
 }
 
+.available-car-image {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.table-responsive {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.modal-content{
+  position:fixed;
+  display:none;
+  z-index:2;
+  width:50%;
+  margin:0;
+  padding:10px 20px;
+  border:2px solid #aaa;
+  background:#fff;
+}
+
+.modal-overlay {
+  z-index:1;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:120%;
+  background-color:rgba(0,0,0,0.75);
+}
+
+.modal-close {
+  color:#00f;
+  text-decoration:underline;
+}
+
 .time-container {
+  text-align: center;
   padding-top: 50px;
   padding-bottom: 60px;
   h1 {
@@ -197,98 +240,31 @@ button{
 .btn-complete{
   padding: 10px 30px;
   font-size: 24px;
-  margin-bottom: 120px;
+  margin-top: 40px;
   font-weight: 500;
 }
 
 .confirm-wrapper{
   padding-top: 20px;
-  margin-bottom: 80px;
+  width: 70%;
+  margin: 40px auto 40px auto;
+  h2 {
+    font-size: 28px;
+  }
 }
 
 .items {
-  margin-bottom: 30px;
-  padding: 20px;
+  margin-bottom: 40px;
 }
 .item {
   font-size: 32px;
   display: inline-block;
-  padding: 14px;
   font-weight: 500;
 }
+
 .heading{
-  width: 35%;
+  width: 45%;
 }
 .content{
-  width: 60%;
-}
-
-.btn-admin{
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
-
-
-.admin-wrapper {
-  width: 100vw;
-  height: 100vh;
-}
-
-.admin-container {
-  padding-top: 50px;
-  h1 {
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-  h4 {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  img{
-    margin: auto;
-    width: 100%;
-    height: auto;
-    margin-bottom: 80px;
-  }
-}
-
-.reserve-card{
-  padding: 60px;
-  border: 1px solid #b2b2b2;
-}
-
-.selected-date{
-  background-color:	#65B2FF;
-}
-
-.availables-card{
-  margin-top: 20px;
-  padding: 30px 0;
-  border: 1px solid #e5e5e5;
-  display: none;
-}
-
-.time-btn{
-  width: 150px;
-  padding: 10px 15px;
-  margin: 14px 30px;
-  font-size: 20px;
-  color: black;
-  font-weight: 500;
-  border-radius: 5px;
-  border: 1px solid #7F7F7F;
-}
-
-.active {
-  background-color: #65B2FF;
-}
-
-.reserve-car-card{
-  padding: 20px 60px;
-  border: 1px solid #b2b2b2;
-}
-
-.angle-container{
-  text-align: center;
-  padding: 10px 0;
+  width: 54%;
 }

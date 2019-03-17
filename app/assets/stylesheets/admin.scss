@@ -1,0 +1,110 @@
+.admin-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.admin-container {
+  padding-top: 50px;
+  h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 80px;
+  }
+  h4 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  img{
+    margin: auto;
+    width: 100%;
+    height: auto;
+    margin-bottom: 80px;
+  }
+}
+
+.stock-title{
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.car-cards{
+  padding: 10px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.car-card{
+  width: 20%;
+  display: inline-block;
+  border: 1px solid #b2b2b2;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  img{
+    margin: auto;
+  }
+}
+
+.active{
+  border: 5px solid #CB0000;
+}
+
+.angle-container{
+  text-align: center;
+  padding: 10px;
+}
+
+.stock-cards{
+  padding: 30px 50px;
+  border: 1px solid #b2b2b2;
+  margin-top: 25px;
+  margin-bottom: 80px;
+}
+
+.btn-wrapper{
+  text-align: center;
+}
+
+.btn-register{
+  margin-top: 30px;
+}
+
+.btn-admin{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+
+.reserve-card{
+  padding: 60px;
+  border: 1px solid #b2b2b2;
+}
+
+.availables-card{
+  margin-top: 20px;
+  padding: 30px 0;
+  border: 1px solid #e5e5e5;
+  display: none;
+}
+
+.time-btn{
+  width: 150px;
+  padding: 10px 15px;
+  margin: 14px 30px;
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #7F7F7F;
+}
+
+.selected-time {
+  background-color: #65B2FF;
+}
+
+.reserve-car-card{
+  padding: 20px 60px;
+  border: 1px solid #b2b2b2;
+}

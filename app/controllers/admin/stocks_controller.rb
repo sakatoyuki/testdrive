@@ -11,7 +11,8 @@ class Admin::StocksController < ApplicationController
     @cars = current_dealer.cars
 
     if @stock.save
-      redirect_to admin_stocks_path, notice: "登録しました"
+      flash.now[:danger] = "登録に成功しました。"
+      redirect_to admin_root_path
     else
       flash.now[:danger] = "登録に失敗しました。"
       render :new
@@ -50,6 +51,8 @@ class Admin::StocksController < ApplicationController
   private
 
   def stock_params
-    params.require(:stock).permit(:name, :date, :time, :availables)
+    params.require(:stock).permit(:name, :date, :time, :availables,
+    stocks_attributes: [:id, :time, :availables, :car_id]
+    )
   end
 end
