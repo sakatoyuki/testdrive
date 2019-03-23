@@ -6,17 +6,28 @@ class Admin::StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new(stock_params)
-    @stocks = Stock.includes(:car).all
-    @cars = current_dealer.cars
-
-    if @stock.save
-      flash.now[:danger] = "登録に成功しました。"
-      redirect_to admin_root_path
-    else
-      flash.now[:danger] = "登録に失敗しました。"
-      render :new
+    binding.pry
+    stocks = []
+    hah = {}
+    params[:stock][:stocks].each do |stock|
+      next if stock[:date] === "" || stock[:availables] === ""
+      hah = {date: stock[:date],
+             time: stock[:time],
+             availables: stock[:availables],
+             car_id: stock_params[:car_id][0]
+           }
+      begin
+        Stock.new(date: hah[:date],
+                  time: hah[:time],
+                  car_id: hah[:car_id],
+                  availables: hah[:availables]).save
+      rescue => e
+        p e.messages
+        flash.now[:danger] = "登録に失敗しました。"
+      end
     end
+    flash.now[:danger] = "登録に成功しました。"
+    redirect_to admin_root_path
   end
 
   def edit
@@ -52,6 +63,7 @@ class Admin::StocksController < ApplicationController
 
   def stock_params
     params.require(:stock).permit(:name, :date, :time, :availables,
+      { :car_id => []}, {:stocks => []},
     stocks_attributes: [:id, :time, :availables, :car_id]
     )
   end

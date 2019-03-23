@@ -1,114 +1,56 @@
 <div class="top-wrapper">
   <div class="container new-container">
     <h1 class="text-center">車種・日時を選択してください：</h1>
-      <h4>シリーズ1</h4>
+
+    <% @cars. each do |car| %>
+      <h4><%= car.name %></h4>
       <div class="available-car-image">
-        <%= image_tag ("car1.png") %>
+        <%= image_tag car.car_image.to_s %>
       </div>
       <div class="table-responsive">
         <table class="table table-bordered text-nowrap text-center">
           <thead class="thead-dark">
             <tr>
-              <th>4/1</th>
-              <th>4/2</th>
-              <th>4/3</th>
-              <th>4/4</th>
-              <th>4/5</th>
+              <th><%= @d.strftime("%m月/%d日") %></th>
+              <th><%= (@d + 1).strftime("%m月/%d日") %></th>
+              <th><%= (@d + 2).strftime("%m月/%d日") %></th>
+              <th><%= (@d + 3).strftime("%m月/%d日") %></th>
+              <th><%= (@d + 4).strftime("%m月/%d日") %></th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><a data-target="modal" class="modal-open">○</a></td>
-              <td><a data-target="modal" class="modal-open">○</a></td>
-              <td><a data-target="modal" class="modal-open">○</a></td>
-              <td><a data-target="modal" class="modal-open">○</a></td>
-              <td><a data-target="modal" class="modal-open">○</a></td>
+              <td>
+                <a data-target="modal" class="modal-open">
+                  ○
+                </a>
+              </td>
+              <td>
+                <a data-target="modal" class="modal-open">
+                  ○
+                </a>
+              </td>
+              <td>
+                <a data-target="modal" class="modal-open">
+                  ○
+                </a>
+              </td>
+              <td>
+                <a data-target="modal" class="modal-open">
+                  ○
+                </a>
+              </td>
+              <td>
+                <a data-target="modal" class="modal-open">
+                  ○
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-
-    <h4>シリーズ2</h4>
-    <div class="available-car-image">
-      <%= image_tag ("car2_1.png") %>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-bordered text-nowrap text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th>4/1</th>
-            <th>4/2</th>
-            <th>4/3</th>
-            <th>4/4</th>
-            <th>4/5</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><a data-target="modal" class="modal-open">○</a></td>
-            <td><a data-target="modal" class="modal-open">○</a></td>
-            <td><a data-target="modal" class="modal-open">○</a></td>
-            <td><a data-target="modal" class="modal-open">○</a></td>
-            <td><a data-target="modal" class="modal-open">○</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-  <h4>シリーズ3</h4>
-  <div class="available-car-image">
-    <%= image_tag ("car3_1.png") %>
+    <% end %>
   </div>
-  <div class="table-responsive">
-    <table class="table table-bordered text-nowrap text-center">
-      <thead class="thead-dark">
-        <tr>
-          <th>4/1</th>
-          <th>4/2</th>
-          <th>4/3</th>
-          <th>4/4</th>
-          <th>4/5</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4>シリーズ4</h4>
-  <div class="available-car-image">
-    <%= image_tag ("car4_2.png") %>
-  </div>
-  <div class="table-responsive">
-    <table class="table table-bordered text-nowrap text-center">
-      <thead class="thead-dark">
-        <tr>
-          <th>4/1</th>
-          <th>4/2</th>
-          <th>4/3</th>
-          <th>4/4</th>
-          <th>4/5</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-          <td><a data-target="modal" class="modal-open">○</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
   <div id="modal" class="time-container modal-content">
     <h1>予約可能時間：</h1>

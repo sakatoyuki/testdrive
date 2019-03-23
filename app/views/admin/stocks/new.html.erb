@@ -2,13 +2,14 @@
   <div class="container admin-container">
     <h1>試乗可能時間の登録</h1>
 
+    <%= form_for [:admin, @stock] do |f| %>
     <p class="stock-title">試乗車を選択してください</p>
     <div class="car-cards">
-      <% @cars.each do |car| %>
-        <button class="car-card">
-          <%= image_tag car.car_image.to_s %>
-          <p><%= car.name%></p>
-        </button>
+
+      <%= f.collection_check_boxes :car_id, @cars, :id, :name, include_hidden: false do |b| %>
+        <%= b.check_box %>
+        <%= b.label %>
+        <%= image_tag b.object.car_image.to_s %>
       <% end %>
     </div>
 
@@ -16,90 +17,70 @@
       <i class="fas fa-angle-down fa-4x"></i>
     </div>
 
-  <%= form_for [:admin, @stock] do |f| %>
-
     <p class="stock-title">日時・時間・台数を選択してください</p>
     <div class="stock-cards">
-
-      <% if false %>
-      <table class="table table-striped table-bordered table-hover">
-        <tbody>
-          <tr>
-            <th>日付</th>
-            <th>時間</th>
-            <th>台数</th>
-          </tr>
-          <%= f.nested_fields_for [:admin, @stock], wrapper_tag: :tr do |q| %>
-            <td><%= q.date_field :date, class: 'form-control' %></td>
-            <td><%= q.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class: 'form-control' %></td>
-            <td><%= q.number_field :availables, class: 'form-control' %></td>
-          <% end %>
-        </tbody>
-      </table>
-      <%= f.add_nested_fields_link :stock, 'Add new', class: 'btn btn-primary', role: 'button' %>
-      <% end %>
-
-      <div class="row">
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :date %></p>
-          <div class="col-md-9">
-            <%= f.date_field :date, class: "form-control" %>
+      <%= f.fields_for "stocks[]", f.object do |c| %>
+        <div class="row">
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :date %></p>
+            <div class="col-md-9">
+              <%= c.date_field :date, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :time %></p>
+            <div class="col-md-9">
+              <%= c.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group fomr-row">
+            <p class="col-md-3"><%= c.label :availables %></p>
+            <div class="col-md-9">
+              <%= c.number_field :availables, class:"form-control" %>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :time %></p>
-          <div class="col-md-9">
-            <%= f.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
+        <div class="row">
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :date %></p>
+            <div class="col-md-9">
+              <%= c.date_field :date, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :time %></p>
+            <div class="col-md-9">
+              <%= c.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group fomr-row">
+            <p class="col-md-3"><%= c.label :availables %></p>
+            <div class="col-md-9">
+              <%= c.number_field :availables, class:"form-control" %>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 form-group fomr-row">
-          <p class="col-md-3"><%= f.label :availables %></p>
-          <div class="col-md-9">
-            <%= f.number_field :availables, class:"form-control" %>
+        <div class="row">
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :date %></p>
+            <div class="col-md-9">
+              <%= c.date_field :date, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group form-row">
+            <p class="col-md-3"><%= c.label :time %></p>
+            <div class="col-md-9">
+              <%= c.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
+            </div>
+          </div>
+          <div class="col-md-4 form-group fomr-row">
+            <p class="col-md-3"><%= c.label :availables %></p>
+            <div class="col-md-9">
+              <%= c.number_field :availables, class:"form-control" %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :date %></p>
-          <div class="col-md-9">
-            <%= f.date_field :date, class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :time %></p>
-          <div class="col-md-9">
-            <%= f.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
-          </div>
-        </div>
-        <div class="col-md-4 form-group fomr-row">
-          <p class="col-md-3"><%= f.label :availables %></p>
-          <div class="col-md-9">
-            <%= f.number_field :time, class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :date %></p>
-          <div class="col-md-9">
-            <%= f.date_field :date, class: "form-control" %>
-          </div>
-        </div>
-        <div class="col-md-4 form-group form-row">
-          <p class="col-md-3"><%= f.label :time %></p>
-          <div class="col-md-9">
-            <%= f.select :time, [["16:00", "16:00"], ["16:30", "16:30"],["17:00", "17:00"],["17:30", "17:30"],["18:00", "18:00"],["18:30", "18:30"],["19:00", "19:00"],["19:30", "19:30"]], class:"form-control" %>
-          </div>
-        </div>
-        <div class="col-md-4 form-group fomr-row">
-          <p class="col-md-3"><%= f.label :availables %></p>
-          <div class="col-md-9">
-            <%= f.number_field :time, class:"form-control" %>
-          </div>
-        </div>
-      </div>
-
+        <% end %>
       <div class="btn-wrapper">
         <%= f.submit "登録する", class: "btn btn-register btn-primary" %>
       </div>
